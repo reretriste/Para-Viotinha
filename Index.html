@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMO PRA KRLH A VIOLETA</title>
+
+    <style>
+        body {
+            background: #ffffff;
+            background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(222, 175, 216, 1) 100%); ;
+        }
+
+        .faixa{
+            background: linear-gradient(90deg, #ffb3ec, #c084fc);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-size: 26px;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px #a400a4;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border-bottom: 3px solid #fff0fb;
+  
+            top: 0;
+            z-index: 1000;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            position: relative; 
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3); 
+            width: 710px;
+            height: 800px;
+            margin: auto;
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 50px;
+            font-family:cursive ;
+            font-size: 14px;
+        }
+        .botão {
+            box-shadow:inset 0px 1px 0px 0px #efdcfb;
+            background:linear-gradient(to bottom, #dfbdfa 5%, #bc80ea 100%);
+            background-color:#dfbdfa;
+            border-radius:6px;
+            border:1px solid #c584f3;
+            display:inline-block;
+            cursor:pointer;
+            color:#ffffff;
+            font-family:Arial;
+            font-size:15px;
+            font-weight:bold;
+            padding:6px 24px;
+            text-decoration:none;
+            text-shadow:0px 1px 0px #9752cc;
+        }
+
+        .botão:hover {
+            background:linear-gradient(to bottom, #bc80ea 5%, #dfbdfa 100%);
+            background-color:#bc80ea;
+        }
+
+        .botão:active {
+            position:relative;
+            top:1px;
+        }
+
+        #sim {
+            margin-left: -90px;
+
+        }
+
+        #não {
+            position: absolute;
+            margin-left: 10px;
+        }
+
+        #hello-kitty {
+            width: 700px;
+            height: 800px;
+            margin: auto;
+            align-items: center;
+        }
+        
+        #chuva {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 999;
+            }
+
+            .chuva-img {
+            position: absolute;
+            width: 40px;
+            animation: cair linear forwards;
+            }
+
+            @keyframes cair {
+            0% {
+                transform: translateY(-50px);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+            }
+
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="faixa">
+        <h1>💕 Manual do Amor: Capítulo Violeta e Renato 2y 💕</h1>
+    </div>
+
+    <div class="container">
+        <h1>
+            Oi meu amor, eu não sou bom em escrever as coisas
+            , mas eu te amo pra krlh. Amo tudo em vc, seus olhos,
+             sua cabeça, seu nariz, sua boca, cada dente da sua boca,
+             sua lingua, seu cabelo, seu cerebro, seu intestino, garganta,
+            faringe, laringe, tronco, braços, dedos, mãos, unhas, pernas,
+             pé, dedos do pé, buceta, cu, bunda, xereca, xoxota, xibiu, vagina,
+              pepeca, pepepetos. TE AMO TODA
+            </h1>
+
+            <img src="https://media.tenor.com/LR0dQvR_0-oAAAAj/hello-kitty-pixel-art.gif" alt="">
+
+            <h2>Vai me dar a xoxotinha hoje?</h2>
+
+            <a href="https://silkmotel.com/" target="_blank"><button id="sim" class="botão">Sim</button></a>
+            <button onmouseover="fuja()" id="não" class="botão">Não</button>
+    </div>
+
+    <div id="hello-kitty"> <img  src="https://64.media.tumblr.com/2bed5c3f5d9bd2114e4837d3e498368f/tumblr_n1mhutFEdJ1roz3f4o1_1280.gif" alt="" ></div>
+
+    <div id="chuva"></div>
+
+    <script>
+
+       function fuja() {
+            var botaoNao = document.getElementById("não");
+            var container = document.querySelector(".container");
+
+            var larguraContainer = container.clientWidth;
+            var alturaContainer = container.clientHeight;
+
+            var maxX = larguraContainer - botaoNao.offsetWidth;
+            var maxY = alturaContainer - botaoNao.offsetHeight;
+
+            var aleatorioX = Math.floor(Math.random() * maxX);
+            var aleatorioY = Math.floor(Math.random() * maxY);
+
+            botaoNao.style.left = aleatorioX + "px";
+            botaoNao.style.top = aleatorioY + "px";
+            }
+
+
+        const chuvaContainer = document.getElementById("chuva");
+
+        function criarImagemChuva() {
+            const img = document.createElement("img");
+            img.src = "https://i.pinimg.com/originals/78/53/69/785369595afb826789e22f0167de114a.gif";
+            img.classList.add("chuva-img");
+
+            const x = Math.floor(Math.random() * window.innerWidth);
+            const duracao = Math.random() * 3 + 2;
+
+            img.style.left = `${x}px`;
+            img.style.animationDuration = `${duracao}s`;
+
+            chuvaContainer.appendChild(img);
+
+            setTimeout(() => {
+                img.remove();
+            }, duracao * 1000);
+            }
+
+        setInterval(criarImagemChuva, 150);
+
+    </script>
+
+</body>
+</html>
